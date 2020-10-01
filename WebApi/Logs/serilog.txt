@@ -1,0 +1,2 @@
+2020-10-01 22:06:14.138 +03:00 [ERR] {"ExceptionMessage":"awgasgh","MethodName":"Business.Abstract.IArticleService.GetArticleList","MethodParameters":[{"Name":"dto","Value":{"UserId":1},"Type":"ArticleForGetListDto"}]}
+2020-10-01 22:07:25.890 +03:00 [ERR] {"ExceptionMessage":"awgasgh","MethodName":"Business.Abstract.IArticleService.GetArticleList","MethodParameters":[{"Name":"dto","Value":{"UserId":1},"Type":"ArticleForGetListDto"}]}
