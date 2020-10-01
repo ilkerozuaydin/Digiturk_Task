@@ -1,15 +1,14 @@
 ﻿using Core.Utilities.IoC.ServiceTools;
 using Microsoft.Extensions.Caching.Memory;
+using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
-using Microsoft.Extensions.DependencyInjection;
 
 namespace Core.CrossCuttingConcerns.Caching.Microsoft
 {
-   public class MemoryCacheManager:ICacheManager
+    public class MemoryCacheManager : ICacheManager
     {
         private readonly IMemoryCache _cache;
 
@@ -60,6 +59,10 @@ namespace Core.CrossCuttingConcerns.Caching.Microsoft
 
             var regex = new Regex(pattern, RegexOptions.Singleline | RegexOptions.Compiled | RegexOptions.IgnoreCase);
             var keysToRemove = cacheCollectionValues.Where(d => regex.IsMatch(d.Key.ToString())).Select(d => d.Key).ToList();
+            foreach (var key in keysToRemove)
+            {
+                _cache.Remove(key);
+            }
         }
     }
 }

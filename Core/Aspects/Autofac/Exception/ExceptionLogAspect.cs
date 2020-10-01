@@ -2,10 +2,8 @@
 using Core.CrossCuttingConcerns.Logging;
 using Core.Utilities.Interceptors;
 using Core.Utilities.IoC.ServiceTools;
-using System;
-using System.Collections.Generic;
-using System.Text;
 using Microsoft.Extensions.DependencyInjection;
+using System.Collections.Generic;
 
 namespace Core.Aspects.Autofac.Exception
 {

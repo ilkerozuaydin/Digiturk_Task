@@ -7,7 +7,6 @@ using System;
 using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
-using System.Text;
 
 namespace Core.Utilities.Security.Jwt
 {
@@ -53,7 +52,7 @@ namespace Core.Utilities.Security.Jwt
             var claims = new List<Claim>();
             claims.AddNameIdentifier(user.Id.ToString());
             claims.AddEmail(user.Email.ToString());
-            claims.AddName($"{user.UserName}");
+            claims.AddName($"{user.Name}");
             return claims;
         }
     }

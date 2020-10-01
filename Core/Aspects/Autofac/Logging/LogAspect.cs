@@ -1,25 +1,19 @@
-﻿
+﻿using Castle.DynamicProxy;
+using Core.CrossCuttingConcerns.Logging;
 using Core.Utilities.Interceptors;
 using Core.Utilities.IoC.ServiceTools;
-using System;
-using System.Collections.Generic;
-using System.Text;
 using Microsoft.Extensions.DependencyInjection;
-using Castle.DynamicProxy;
-using Core.CrossCuttingConcerns.Logging;
-using Core.Utilities.TenantUser;
+using System.Collections.Generic;
 
 namespace Core.Aspects.Autofac.Logging
 {
     public class LogAspect : MethodInterception
     {
         private readonly ILogger _logger;
-        private readonly IUserContext _userContext;
 
         public LogAspect()
         {
             _logger = ServiceTool.ServiceProvider.GetService<ILogger>();
-            _userContext = ServiceTool.ServiceProvider.GetService<IUserContext>();
         }
 
         protected override void OnBefore(IInvocation invocation)
@@ -43,8 +37,7 @@ namespace Core.Aspects.Autofac.Logging
             var logDetail = new InfoLogDetail
             {
                 MethodName = $"{invocation.Method.DeclaringType.FullName}.{invocation.Method.Name}",
-                MethodParameters = logParameters,
-                UserId = _userContext.Id
+                MethodParameters = logParameters
             };
 
             return logDetail;

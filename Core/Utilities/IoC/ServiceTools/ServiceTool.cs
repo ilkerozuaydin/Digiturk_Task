@@ -1,13 +1,10 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Core.Utilities.IoC.ServiceTools
 {
     public class ServiceTool
     {
-
         public static IServiceProvider ServiceProvider { get; private set; }
 
         public static T GetService<T>()
