@@ -22,4 +22,4 @@
 - IEntity nesnesiyle soft delete pattern uygulamak isterdim.
 # Eklemek istediğiniz bir yorumunuz var mı?
 - Connection string : "Server=localhost;Database=Blog_Db;User Id=sa;Password=1234;" bu şekildedir appsettings.json dosyasından değiştirmeniz gerekebilir.
-- Swagger login olduktan sonra gelen tokenla ile sağ üst kısımdan Authentication'ı başına 'Bearer + [Boşluk] + [Token]' yazarak sağlayabilirsiniz.
+- Swagger login olduktan sonra gelen token ile sağ üst kısımdan Authentication'ı başına 'Bearer + [Boşluk] + [Token]' yazarak sağlayabilirsiniz.
